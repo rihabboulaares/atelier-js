@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Inscription</title>
+  <style>
+    header {
+      background-color: red;
+      color: white;
+    }
+
+    .LienTitre:link {
+      color: red;
+      text-decoration: none;
+    }
+
+    .LienTitre:visited {
+      color: black;
+    }
+
+    .LienTitre:hover {
+      color: yellow;
+    }
+
+    .LienTitre:active {
+      color: green;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    h1 {
+      text-decoration: underline;
+      color: red;
+      font-size: 50px;
+      padding: 10px;
+      margin: 10px;
+    }
+
+    form form {
+      width: 500px;
+      padding: 20px;
+      background-color: #f2f2f2;
+
+      .btn {
+      background-color: #DED983;
+      font-size: 1.2em;
+      color: #345071;
+      font-family: "Trebuchet MS", Verdana, sans-serif;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 8px;
+      border: 1px solid #ccc;
+    }
+
+    footer {
+      background-color: red;
+      color: white;
+
+  </style>
+</head>
+<body>
+  <header>
+    <table>
+      <tr>
+        <td><a href="accueil.html">Accueil</a></td>
+        <td><a href="projets.html">Projets</a></td>
+        <td><a href="services.html">Services</a></td>
+        <td><a href="inscription.html">Inscription</a></td>
+      </tr>
+    </table>
+    <img src="t.jpg" alt="Logo de l'agence digitale" width="1450" height="300">
+  </header>
+
+  <h1>Inscription</h1>
+
+  <form>
+    <table>
+      <tr>
+  <td><label for="nom">Nom :</label></td>
+  <td><input type="text" id="nom" name="nom" required minlength="3" placeholder="Entrez votre nom (min. 3 caractères)" onkeyup="nameValidation()"></td>
+  <td><span id="nameValidationMessage"></span></td>
+</tr>
+      <tr>
+        <td><label for="prenom">Prénom :</label></td>
+        <td><input type="text" id="prenom" name="prenom" required minlength="3" placeholder="Entrez votre prénom (min. 3 caractères)"></td>
+      </tr>
+      <tr>
+        <td><label for="adresse">Adresse :</label></td>
+        <td><input type="text" id="adresse" name="adresse" required placeholder="Entrez votre adresse"></td>
+      </tr>
+      <tr>
+        <td><label for="telephone">Numéro de téléphone :</label></td>
+        <td><input type="tel" id="telephone" name="telephone" required pattern="[0-9]{8}" placeholder="Entrez votre numéro de téléphone (8 chiffres)"></td>
+      </tr>
+      <tr>
+        <td><label for="date_naissance">Date de naissance :</label></td>
+        <td><input type="date" id="date_naissance" name="date_naissance" required placeholder="Sélectionnez votre date de naissance"></td>
+      </tr>
+      <tr>
+        <td><label for="email">Email :</label></td>
+        <td><input type="email" id="email" name="email" required pattern="[a-zA-Z0-9._%+-]+@gmail.com" placeholder="Entrez votre adresse email (something@gmail.com)"></td>
+      </tr>
+      <tr>
+        <td><label for="motdepasse">Mot de passe :</label></td>
+        <td><input type="password" id="motdepasse" name="motdepasse" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" placeholder="Entrez votre mot de passe, Il devrait inclure une combinaison de minuscules, majuscules, chiffres et symboles"></td>
+      </tr>
+      <tr>
+        <td><label for="confirmpassword">Confirmer le mot de passe :</label></td>
+        <td><input type="password" id="confirmpassword" name="confirmpassword" required placeholder="Confirmez votre mot de passe"></td>
+      </tr>
+    </table>
+    
+    <div>
+      <button class="btn" type="button" onclick="passValidation()">S'inscrire</button>
+      <button class="btn" type="reset">Annuler</button>
+    </div>
+  </form>
+  <script src="inscription.js"></script>
+
+  </body>
+</html>
